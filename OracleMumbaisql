@@ -241,8 +241,8 @@ VALUES('101','Seema','Rai','Female','seema.rai@mindgate.in','9929324511','10-MAR
 DROP TABLE address_details;
 CREATE TABLE address_details(
     address_id NUMBER(10),
-    house_name VARCHAR2(50),
-    street VARCHAR2(50),
+    house_name VARCHAR2(50) NOT NULL,
+    street VARCHAR2(50) NOT NULL,
     city VARCHAR2(50) DEFAULT 'Mumbai',
     pin NUMBER(10),
     CONSTRAINT address_id_pk PRIMARY KEY(address_id)
@@ -255,3 +255,33 @@ INSERT INTO address_details
 VALUES(2,'Woodland Park','M.G. Road',default,40012);
 
 SELECT * FROM address_details;
+
+-- UNIQUE CONSTRAINT
+
+DROP TABLE employee_details;
+CREATE TABLE employee_details (
+    employee_id VARCHAR2(13),
+    first_name VARCHAR2(50),
+    last_name VARCHAR2(50),
+    gender VARCHAR2(10),
+    email VARCHAR2(50) NOT NULL,
+    contact_number VARCHAR2(15),
+    date_of_birth DATE,
+    address_id NUMBER(10),
+    CONSTRAINT employee_id_pk PRIMARY KEY(employee_id),
+    CONSTRAINT gender_ck CHECK (gender IN ('Male','Female','Other')),
+    CONSTRAINT employee_id_ck CHECK ((employee_id LIKE 'MGS%') OR ((employee_id LIKE 'mgs%'))),
+    CONSTRAINT email_uq UNIQUE (email)
+);
+INSERT INTO employee_details 
+VALUES('MGS101','Seema','Rai','Female','seema.rai@mindgate.in','9929324511','10-MAR-2010',1);
+INSERT INTO employee_details 
+VALUES('mgs101','Seema','Rai','Female',NULL,'9929324511','10-MAR-2010',1);
+INSERT INTO employee_details 
+VALUES('mgs102','Seema','Rai','Female',NULL,'9929324511','10-MAR-2010',1);
+INSERT INTO employee_details 
+VALUES('101','Seema','Rai','Female','seema.rai@mindgate.in','9929324511','10-MAR-2010',1);
+
+SELECT * FROM employee_details;
+
+SELECT * FROM USER_INDEXES;
