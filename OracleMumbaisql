@@ -1,0 +1,119 @@
+ALTER SESSION SET "_ORACLE_SCRIPT"=true; 
+CREATE USER mindgatemumbai IDENTIFIED BY mindgatemumbai;
+GRANT CONNECT,DBA TO mindgatemumbai;
+
+-- Date : 8th Aug 2024 
+-- DDL - CREATE ALTER DROP
+-- DML - INSERT UPDATE DELETE
+-- CONSTRAINTS - PRIMARY KEY,FOREGIN KEY,CHECK CONSTRAINT,DEFAULT,NOT NULL,UNIQUE
+-- ASSINGMENT
+
+-- DDL - CREATE
+CREATE TABLE employee_details (
+    employee_id NUMBER(10),
+    first_name VARCHAR2(50),
+    last_name VARCHAR2(50),
+    gender VARCHAR2(10),
+    email VARCHAR2(50),
+    contact_number VARCHAR2(15),
+    date_of_birth DATE
+);
+
+DESC employee_details;
+
+INSERT INTO employee_details 
+VALUES(101,'Seema','Rai','Female','seema.rai@mindgate.in','9929324511','10-MAR-2010');
+
+
+SELECT * FROM employee_details;
+
+-- DDL - ALTER - MODIFY COLUMN
+ALTER TABLE employee_details
+MODIFY gender VARCHAR(6);
+
+DESC employee_details;
+
+-- DDL - ALTER - ADD ONE/MULTIPLE COLUMN
+ALTER TABLE employee_details
+ADD salary NUMBER(10,2);
+
+ALTER TABLE employee_details
+ADD ( 
+salary NUMBER(10,2),
+designation VARCHAR2(20)
+);
+
+DESC employee_details;
+
+-- DDL - ALTER - REMOVE ONE/MULTIPLE COLUMN
+ALTER TABLE employee_details
+DROP COLUMN salary;
+
+ALTER TABLE employee_details
+DROP (salary  , designation);
+
+DESC employee_details;
+
+-- DDL - DROP 
+DROP TABLE employee_details;
+
+DESC employee_details;
+
+-- DML - INSERT
+CREATE TABLE employee_details (
+    employee_id NUMBER(10),
+    first_name VARCHAR2(50),
+    last_name VARCHAR2(50),
+    gender VARCHAR2(10),
+    email VARCHAR2(50),
+    contact_number VARCHAR2(15),
+    date_of_birth DATE
+);
+
+DESC employee_details;
+INSERT INTO employee_details 
+VALUES(101,'Seema','Rai','Female','seema.rai@mindgate.in','9929324511','10-MAR-2010');
+
+INSERT INTO employee_details (first_name,last_name,gender,contact_number,date_of_birth,employee_id)
+VALUES('Sagar','Thakur','Male','8890121212','15-AUG-2010',102);
+
+SELECT * FROM employee_details;
+-- DML - UPDATE 
+
+UPDATE employee_details SET email='seema.rai@mindgate.in' , contact_number = ' ' WHERE employee_id=101 OR employee_id =102;
+UPDATE employee_details SET email='seema.rai@mindgate.in' , contact_number = ' ' WHERE employee_id=101;
+
+SELECT * FROM employee_details WHERE employee_id = 102;
+
+-- DML - DELETE
+DELETE employee_details WHERE employee_id = 101;
+DELETE employee_details; -- Delete all rows
+
+SELECT * FROM employee_details;
+
+-- CONSTRAINTS - PRIMARY KEY
+DROP TABLE employee_details;
+
+CREATE TABLE employee_details (
+    employee_id NUMBER(10) PRIMARY KEY,
+    first_name VARCHAR2(50),
+    last_name VARCHAR2(50),
+    gender VARCHAR2(10),
+    email VARCHAR2(50),
+    contact_number VARCHAR2(15),
+    date_of_birth DATE
+);
+
+CREATE TABLE employee_details (
+    employee_id NUMBER(10),
+    first_name VARCHAR2(50),
+    last_name VARCHAR2(50),
+    gender VARCHAR2(10),
+    email VARCHAR2(50),
+    contact_number VARCHAR2(15),
+    date_of_birth DATE,
+    CONSTRAINT employee_id_pk PRIMARY KEY(employee_id)
+);
+DESC employee_details;
+
+SELECT * FROM user_constraints;
