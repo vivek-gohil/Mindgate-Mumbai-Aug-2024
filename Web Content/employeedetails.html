@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+</head>
+
+<body>
+    <h2>Employee Details</h2>
+    <form id="employeedetailsform" action="" onsubmit="return validateEmployeeDetails()">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><Input type="text" name="name"></td>
+                <td><label id="errorname"></label></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><Input type="text" name="age"></td>
+                <td><label id="errorage"></label></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><Input type="text" name="email"></td>
+                <td><label id="erroremail"></label></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>
+                    <select name="country">
+                        <option value="--">Select Your Country</option>
+                        <option value="India">India</option>
+                        <option value="UK">UK</option>
+                        <option value="USA">USA</option>
+
+                    </select>
+                </td>
+                <td><label id="errorcountry"></label></td>
+            </tr>
+            <tr>
+                <td><input type="reset" value="Clear"></td>
+                <td><input type="submit" value="Save"></td>
+            </tr>
+        </table>
+    </form>
+    <script src="main.js"></script>
+</body>
+
+</html>
