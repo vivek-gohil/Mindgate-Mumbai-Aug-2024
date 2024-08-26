@@ -1619,3 +1619,49 @@ END;
 DELETE members WHERE member_id = 1;
 
 SELECT * FROM audits;
+
+CREATE TABLE books (
+    book_id NUMBER(10),
+    title VARCHAR2(50),
+    author VARCHAR2(50),
+    is_issuable CHAR DEFAULT 'Y',
+    is_available CHAR DEFAULT 'Y',
+    CONSTRAINT book_code_pk PRIMARY KEY(book_id),
+    CONSTRAINT is_issuable_ck CHECK(is_issuable in ('Y', 'N')),
+    CONSTRAINT is_available_ck CHECK(is_available in ('Y', 'N'))
+);
+
+
+
+CREATE TABLE members (
+    member_id NUMBER(10),
+    name VARCHAR2(50),
+    kind CHAR,
+    books_issued NUMBER(10) DEFAULT 0,
+    CONSTRAINT member_code_pk PRIMARY KEY(member_id),
+    CONSTRAINT kind_ck CHECK(kind in ('F', 'S')),
+    CONSTRAINT books_issued_ck CHECK(books_issued <= 3 AND kind = 'S' OR books_issued <= 25 AND kind = 'F')
+);
+
+
+CREATE TABLE transactions (
+    serial_no NUMBER(10),
+    book_id NUMBER(10) UNIQUE,
+    member_id NUMBER(10),
+    issue_date DATE,
+    return_date DATE,
+    status CHAR,
+    CONSTRAINT serial_no_pk PRIMARY KEY(serial_no),
+    CONSTRAINT book_id_fk FOREIGN KEY(book_id) REFERENCES books(book_id),
+    CONSTRAINT member_id_fk FOREIGN KEY(member_id) REFERENCES members(member_id),
+    CONSTRAINT status_ck CHECK(status in ('I', 'R'))
+);
+drop sequence book_id_sq;
+
+CREATE SEQUENCE book_id_sq START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE member_id_sq START WITH 100 INCREMENT BY 1;
+CREATE SEQUENCE serial_no_sq START WITH 1 INCREMENT BY 1;
+
+INSERT INTO books VALUES(1, 'The Fountainhead', 'Ayn Rand', 'Y', 'Y');
+INSERT INTO members VALUES(1, 'Krishna', 'F', 1);
+INSERT INTO transactions VALUES(1, 1, 1, '10-JAN-2020', '20-JAN-2020');
