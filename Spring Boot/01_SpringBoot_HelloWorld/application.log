@@ -1,0 +1,23 @@
+2024-09-12T11:04:44.386+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] com.mindgate.main.Application            : Starting Application using Java 17.0.10 with PID 1012 (D:\Vivek Gohil\Training\Mindgate Mumbai\Spring Boot\01_SpringBoot_HelloWorld\target\classes started by bornt in D:\Vivek Gohil\Training\Mindgate Mumbai\Spring Boot\01_SpringBoot_HelloWorld)
+2024-09-12T11:04:44.388+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] com.mindgate.main.Application            : No active profile set, falling back to 1 default profile: "default"
+2024-09-12T11:04:44.429+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\bornt\.m2\repository\com\oracle\database\jdbc\ojdbc11\21.9.0.0\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/bornt/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+2024-09-12T11:04:44.431+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-09-12T11:04:44.431+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-09-12T11:04:44.919+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-09-12T11:04:44.935+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JDBC repository interfaces.
+2024-09-12T11:04:45.302+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-09-12T11:04:45.312+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-12T11:04:45.313+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-12T11:04:45.355+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-12T11:04:45.355+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 924 ms
+2024-09-12T11:04:45.473+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] c.m.m.controller.EmployeeCRUDController  : EmployeeCRUDController Object Created
+2024-09-12T11:04:45.729+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-12T11:04:45.997+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@2c14da1a
+2024-09-12T11:04:45.999+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-12T11:04:46.093+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-09-12T11:04:46.125+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-09-12T11:04:46.134+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] com.mindgate.main.Application            : Started Application in 2.064 seconds (process running for 2.649)
+2024-09-12T11:04:46.137+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [restartedMain] com.mindgate.main.Application            : Spring Boot Application Is Running
+2024-09-12T16:35:53.471+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [RMI TCP Connection(333)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-09-12T16:35:53.688+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [RMI TCP Connection(333)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-09-12T16:35:53.698+05:30  INFO 1012 --- [01_SpringBoot_HelloWorld] [RMI TCP Connection(333)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
